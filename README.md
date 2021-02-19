@@ -11,8 +11,15 @@ a pratice project, cocos2d-x lua,  some function intergate got form git, some is
 </br>
 5、the dir rad is unprocess grabage.
 </br>
+6、to build, open the solution, unload the folowing project
+1、openssl
+2、fcollada
+3、libwebsockets
+4、spidermonkey
+5、libxml2
+</br>
 
-6、the entrance
+7、the entrance
 </br>
 
 <p align="center">
