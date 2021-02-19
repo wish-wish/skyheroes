@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "E:\\Cocos\\projects\\skyheroes\\frameworks\\runtime-src\\proj.android\\app\\res\\mipmap-xhdpi\\ic_launcher.png"
+    }
+]

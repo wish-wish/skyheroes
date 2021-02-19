@@ -1,0 +1,116 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+MERGED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-16:12
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+	package
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:3:5-36
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:1-40:12
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:4:5-35
+uses-feature#0x00020000
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:6:5-54
+	android:glEsVersion
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:6:19-51
+application
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:8:5-29:19
+MERGED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-14:19
+MERGED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-14:19
+	android:label
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:9:9-41
+	android:icon
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:10:9-35
+meta-data#android.app.lib_name
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:14:3-15:37
+	android:value
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:15:8-34
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:14:14-49
+activity#org.cocos2dx.lua.AppActivity
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:17:9-28:20
+	android:screenOrientation
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:19:13-50
+	android:label
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:21:13-45
+	android:configChanges
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:20:13-74
+	android:theme
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:22:13-71
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:18:13-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:26:27-74
+uses-permission#android.permission.INTERNET
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:31:5-66
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:31:22-64
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:32:5-78
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:32:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:33:5-75
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:33:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:34:5-78
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:34:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:35:5-75
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:35:22-73
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:37:4-82
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:37:21-80
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:38:3-78
+	android:name
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml:38:20-76
+uses-sdk
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+MERGED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		ADDED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+		INJECTED from E:\Cocos\projects\skyheroes\frameworks\runtime-src\proj.android\app\AndroidManifest.xml
+uses-permission#android.permission.VIBRATE
+ADDED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-66
+	android:name
+		ADDED from [:libcocos2dx] E:\Cocos\projects\skyheroes\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:22-63
