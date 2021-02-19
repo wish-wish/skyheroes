@@ -1,4 +1,4 @@
-1、如果要编译C++工程临时输出路径为“skyheroes\..\_Out”，所以不要解压在磁盘的根目录下，如e:\或者e:\xxx都是不允许的，除了自己修改输出路径
+1、如果要编译C++工程临时输出路径为“skyheroes\..\_Out”，所以不要解压在磁盘的根目录下
 2、如果你不要编译原生C++工程，请随意；
 3、sdf=请修改至其他目录：VS菜单：Tool\Options\Text Editor\C/C++\Advance\Fallback Location
 Always Use Fallback Location=true
