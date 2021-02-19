@@ -3,9 +3,9 @@ a pratice project, cocos2d-x lua,  some function intergate got form git, some is
 </br>
 1、use the clean outdir, please don't clone this to the root dir,clone to the second level, like:D:/cocos/skyheroes 
 </br>
-2、the small 127 have some bug, no time to fix.
+2、some one request the small 127, this is full project.
 </br>
-3、some one request the small 127, this is full project.
+3、the small 127 have some bug, no time to fix.
 </br>
 4、the best effect is use the vs best ver 2013
 </br>
