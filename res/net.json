@@ -1,0 +1,14 @@
+{ 
+    "gateserver":{
+        "serverip":"127.0.0.1",
+        "serverport":8310
+    },
+    "loginerver":{
+        "serverip":"127.0.0.1",
+        "serverport":8300
+    },
+    "sound":{
+        "backgroundmusic":false,
+        "buttonsound":false
+    }
+}

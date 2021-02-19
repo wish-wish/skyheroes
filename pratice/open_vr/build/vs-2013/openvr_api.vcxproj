@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\headers\openvr.h" />
+    <ClInclude Include="..\..\headers\openvr_capi.h" />
+    <ClInclude Include="..\..\headers\openvr_driver.h" />
+    <ClInclude Include="..\..\src\ivrclientcore.h" />
+    <ClInclude Include="..\..\src\json\json-forwards.h" />
+    <ClInclude Include="..\..\src\json\json.h" />
+    <ClInclude Include="..\..\src\vrcommon\dirtools_public.h" />
+    <ClInclude Include="..\..\src\vrcommon\envvartools_public.h" />
+    <ClInclude Include="..\..\src\vrcommon\hmderrors_public.h" />
+    <ClInclude Include="..\..\src\vrcommon\pathtools_public.h" />
+    <ClInclude Include="..\..\src\vrcommon\sharedlibtools_public.h" />
+    <ClInclude Include="..\..\src\vrcommon\strtools_public.h" />
+    <ClInclude Include="..\..\src\vrcommon\vrpathregistry_public.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\headers\openvr_api.cs" />
+    <None Include="..\..\headers\openvr_api.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\jsoncpp.cpp" />
+    <ClCompile Include="..\..\src\openvr_api_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\dirtools_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\envvartools_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\hmderrors_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\pathtools_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\sharedlibtools_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\strtools_public.cpp" />
+    <ClCompile Include="..\..\src\vrcommon\vrpathregistry_public.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D8BBB851-C473-FA9E-2D7B-D3FA1952958F}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>openvr_api</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\..\..\..\..\..\_out\$(SolutionName)\$(Configuration).$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\..\..\..\_out\$(SolutionName)\_int\$(ProjectName)_$(Configuration).$(Platform)\</IntDir>
+    <TargetName>openvr_api</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\..\..\..\..\..\_out\$(SolutionName)\$(Configuration).$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\..\..\..\_out\$(SolutionName)\_int\$(ProjectName)_$(Configuration).$(Platform)\</IntDir>
+    <TargetName>openvr_api</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\..;..\..\headers;..\..\src;..\..\src\json;..\..\src\vrcommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <BuildLog>
+      <Path>$(SolutionDir)..\..\..\..\..\..\_out\$(SolutionName)\log\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\..;..\..\headers;..\..\src;..\..\src\json;..\..\src\vrcommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <BuildLog>
+      <Path>$(SolutionDir)..\..\..\..\..\..\_out\$(SolutionName)\log\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

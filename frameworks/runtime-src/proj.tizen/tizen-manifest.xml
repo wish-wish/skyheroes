@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="skyheroes.lngo.com" version="1.0.0">
+    <ui-application appid="skyheroes.lngo.com" exec="hellolua" type="capp" multiple="false" taskmanage="true" nodisplay="false">
+        <icon>skyheroes.png</icon>
+        <label>skyheroes</label>
+	</ui-application>
+</manifest>

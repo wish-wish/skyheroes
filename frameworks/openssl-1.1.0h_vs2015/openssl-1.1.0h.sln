@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcrypto-1_1-x64", "libcrypto-1_1-x64\libcrypto.vcxproj", "{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libssl-1_1-x64", "libssl-1_1-x64\libssl-1_1-x64.vcxproj", "{2954E881-CA34-4E70-A832-3DC099019235}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openssl", "openssl\openssl.vcxproj", "{260B2792-A79A-4652-A6D5-9E37F11334E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Debug|x64.ActiveCfg = Debug|x64
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Debug|x64.Build.0 = Debug|x64
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Debug|x86.ActiveCfg = Debug|Win32
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Debug|x86.Build.0 = Debug|Win32
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Release|x64.ActiveCfg = Release|x64
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Release|x64.Build.0 = Release|x64
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Release|x86.ActiveCfg = Release|Win32
+		{EC7F6E18-81BD-4DE1-B144-85239B2F3C8C}.Release|x86.Build.0 = Release|Win32
+		{2954E881-CA34-4E70-A832-3DC099019235}.Debug|x64.ActiveCfg = Debug|x64
+		{2954E881-CA34-4E70-A832-3DC099019235}.Debug|x64.Build.0 = Debug|x64
+		{2954E881-CA34-4E70-A832-3DC099019235}.Debug|x86.ActiveCfg = Debug|Win32
+		{2954E881-CA34-4E70-A832-3DC099019235}.Debug|x86.Build.0 = Debug|Win32
+		{2954E881-CA34-4E70-A832-3DC099019235}.Release|x64.ActiveCfg = Release|x64
+		{2954E881-CA34-4E70-A832-3DC099019235}.Release|x64.Build.0 = Release|x64
+		{2954E881-CA34-4E70-A832-3DC099019235}.Release|x86.ActiveCfg = Release|Win32
+		{2954E881-CA34-4E70-A832-3DC099019235}.Release|x86.Build.0 = Release|Win32
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Debug|x64.ActiveCfg = Debug|x64
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Debug|x64.Build.0 = Debug|x64
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Debug|x86.ActiveCfg = Debug|Win32
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Debug|x86.Build.0 = Debug|Win32
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Release|x64.ActiveCfg = Release|x64
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Release|x64.Build.0 = Release|x64
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Release|x86.ActiveCfg = Release|Win32
+		{260B2792-A79A-4652-A6D5-9E37F11334E4}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

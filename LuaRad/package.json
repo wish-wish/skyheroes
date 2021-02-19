@@ -1,0 +1,441 @@
+{
+    "name": "luarad",
+    "displayName": "Rad",
+    "description": "Rad(luaRad) is a cocos2d-x lua binding debugger,support code complete(api snippets), plan to add unity3d, quick, native lua, etc debugger in the future(1066), luaide",
+    "license": "MIT",
+    "version": "0.0.18",
+    "publisher": "cjoy",
+    "author": {
+        "name": "cjoy",
+        "email": "45030013@qq.com"
+    },
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "icon": "images/heart1.png",
+    "categories": [
+        "Languages",
+        "Debuggers",
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onLanguage:lua"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "luaradConfig": {},
+        "breakpoints": [{
+            "language": "lua"
+        }],
+        "debuggers": [{
+            "type": "lua",
+            "label": "LuaDebug-luarad",
+            "enableBreakpointsFor": {
+                "languageIds": [
+                    "lua"
+                ]
+            },
+            "program": "./out/src/debugger/LuaDebug.js",
+            "runtime": "node",
+            "configurationAttributes": {
+                "launch": {
+                    "required": [
+                        "runtimeType",
+                        "localRoot",
+                        "post",
+                        "printType",
+                        "exePath"
+                    ],
+                    "properties": {
+                        "runtimeType": {
+                            "type": "string",
+                            "default": "Cocos2",
+                            "description": "运行时类型",
+                            "enum": [
+                                "Cocos2",
+                                "Cocos3"
+                            ]
+                        },
+                        "host": {
+                            "type": "string",
+                            "description": "调试器的地址(仅Lua51 内置有效)",
+                            "default": "localhost"
+                        },
+                        "port": {
+                            "type": "number",
+                            "description": "调试器的端口",
+                            "default": 7003
+                        },
+                        "mainFile": {
+                            "type": "string",
+                            "description": "--选填 启动的lua 文件名 运行程序支持 workdir 当做 file 进行传入",
+                            "default": "${file}"
+                        },
+                        "localRoot": {
+                            "type": "string",
+                            "description": "--必填 当前文件目录 如果 运行程序支持 workdir 该参数当做 workdir 进行传入",
+                            "default": "${workspaceRoot}"
+                        },
+                        "scripts": {
+                            "type": "array",
+                            "default": [],
+                            "description": "--必填 源文件目录(package.path 中的路径对应的本地路径)",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "exePath": {
+                            "type": "string",
+                            "description": "--必填 执行文件路径",
+                            "default": ""
+                        },
+                        "printType": {
+                            "type": "number",
+                            "default": 1,
+                            "description": "--必填 print打印方式 1 控制台和系统输出,2 控制台输出,3 系统输出",
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "localRootDesc": {
+                            "type": "string"
+                        },
+                        "mainFileDesc": {
+                            "type": "string"
+                        },
+                        "portDesc": {
+                            "type": "string"
+                        },
+                        "scriptsDesc": {
+                            "type": "string"
+                        },
+                        "exePathDesc1": {
+                            "type": "string"
+                        },
+                        "exePathDesc2": {
+                            "type": "string"
+                        },
+                        "exePathDesc3": {
+                            "type": "string"
+                        },
+                        "printTypeDesc": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "attach": {
+                    "required": [
+                        "runtimeType",
+                        "localRoot",
+                        "port",
+                        "printType"
+                    ],
+                    "properties": {
+                        "runtimeType": {
+                            "type": "string",
+                            "default": "Cocos2",
+                            "description": "运行时类型",
+                            "enum": [
+                                "Cocos2",
+                                "Cocos3",
+                                "Unity"
+                            ]
+                        },
+                        "localRoot": {
+                            "type": "string",
+                            "description": "--必填 当前文件目录",
+                            "default": "${workspaceRoot}"
+                        },
+                        "scripts": {
+                            "type": "array",
+                            "default": [],
+                            "description": "--必填 源文件目录(package.path 中的路径对应的本地路径)",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "printType": {
+                            "type": "number",
+                            "default": 1,
+                            "description": "--必填 print打印方式 1 控制台和系统输出,2 控制台输出,3 系统输出",
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "port": {
+                            "type": "number",
+                            "description": "--必填 调试器的端口",
+                            "default": 7003
+                        },
+                        "scriptsDesc": {
+                            "type": "string"
+                        },
+                        "localRootDesc": {
+                            "type": "string"
+                        },
+                        "portDesc": {
+                            "type": "string"
+                        },
+                        "printTypeDesc": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "initialConfigurations": [{
+                    "name": "luaRad-LD-2dx",
+                    "type": "lua",
+                    "request": "launch",
+                    "runtimeType": "Cocos2",
+                    "localRoot": "${workspaceRoot}",
+                    "mainFile": "src/main.lua",
+                    "port": 7003,
+                    "exePath": "simulator/win32/simulator.exe",
+                    "printType": 1
+                },
+                {
+                    "name": "luaRad-RD-2dx",
+                    "type": "lua",
+                    "request": "attach",
+                    "runtimeType": "Cocos2",
+                    "localRoot": "${workspaceRoot}",
+                    "port": 7003,
+                    "printType": 1
+                },
+                {
+                    "name": "LuaRad-RD-unity",
+                    "type": "lua",
+                    "request": "attach",
+                    "runtimeType": "Unity",
+                    "localRoot": "${workspaceRoot}",
+                    "port": 7003,
+                    "printType": 1
+                }
+            ],
+            "configurationSnippets": [{
+                    "label": "luaRad-LD-2dx",
+                    "description": "luaRad cocos2d-x 3.x launch Debugging",
+                    "body": {
+                        "name": "luaRad-LD-2dx",
+                        "type": "lua",
+                        "request": "launch",
+                        "runtimeType": "Cocos2",
+                        "localRoot": "^\"\\${workspaceRoot}\"",
+                        "mainFile": "src/main.lua",
+                        "port": 7003,
+                        "exePath": "simulator/win32/simulator.exe",
+                        "printType": 1
+                    }
+                },
+                {
+                    "label": "luaRad-RD-2dx",
+                    "description": "luaRad cocos2d-x 3.x Remote Debugging",
+                    "body": {
+                        "name": "luaRad-RD-2dx",
+                        "type": "lua",
+                        "request": "attach",
+                        "runtimeType": "Cocos2",
+                        "localRoot": "^\"\\${workspaceRoot}\"",
+                        "port": 7003,
+                        "printType": 1
+                    }
+                },
+                {
+                    "label": "luaRad-RD-unity",
+                    "description": "luaRad Unity Remote Debugging",
+                    "body": {
+                        "name": "LuaRad-RD-unity",
+                        "type": "lua",
+                        "request": "attach",
+                        "runtimeType": "Unity",
+                        "localRoot": "^\"\\${workspaceRoot}\"",
+                        "port": 7003,
+                        "printType": 1
+                    }
+                }
+            ]
+        }],
+        "snippets": [{
+            "language": "lua",
+            "path": "./snippets/snippets.json"
+        }],
+        "commands": [{
+                "command": "luarad.changecase.toUpperCase",
+                "title": "转换为大写"
+            },
+            {
+                "command": "luarad.changecase.toLowerCase",
+                "title": "转换为小写"
+            },
+            {
+                "command": "luarad.utils.createModuleFunction",
+                "title": "创建模块方法"
+            },
+            {
+                "command": "luarad.utils.createFunction",
+                "title": "创建方法"
+            },
+            {
+                "command": "luarad.utils.createTemplateFile",
+                "title": "创建模板文件"
+            },
+            {
+                "command": "luarad.utils.LoadLuaScript",
+                "title": "执行lua加载lua字符串"
+            },
+            {
+                "command": "luarad.donate",
+                "title": "弹出赞助页面"
+            }
+        ],
+        "menus": {
+            "explorer/context": [{
+                "command": "luarad.utils.createTemplateFile",
+                "group": "luarad"
+            }],
+            "editor/context": [{
+                    "command": "luarad.changecase.toUpperCase",
+                    "group": "luarad",
+                    "when": "editorHasSelection && editorLangId == lua"
+                },
+                {
+                    "command": "luarad.changecase.toLowerCase",
+                    "group": "luarad",
+                    "when": "editorHasSelection && editorLangId == lua"
+                },
+                {
+                    "command": "luarad.utils.createModuleFunction",
+                    "group": "luarad",
+                    "when": "editorHasSelection && editorLangId == lua"
+                },
+                {
+                    "command": "luarad.utils.createFunction",
+                    "group": "luarad",
+                    "when": "editorHasSelection && editorLangId == lua"
+                },
+                {
+                    "command": "luarad.utils.createTemplateFile",
+                    "when": "editorHasSelection && editorLangId == lua",
+                    "group": "luarad"
+                }
+            ]
+        },
+        "keybindings": [{
+                "command": "luarad.changecase.toUpperCase",
+                "key": "CTRL+L CTRL+U",
+                "when": "editorHasSelection && editorLangId == lua"
+            },
+            {
+                "command": "luarad.changecase.toLowerCase",
+                "key": "CTRL+L CTRL+L",
+                "when": "editorHasSelection && editorLangId == lua"
+            },
+            {
+                "command": "luarad.utils.createTemplateFile",
+                "key": "CTRL+L CTRL+T",
+                "when": "editorTextFocus && editorLangId == lua"
+            },
+            {
+                "command": "luarad.utils.createFunction",
+                "key": "CTRL+L CTRL+F",
+                "when": "editorTextFocus && editorLangId == lua"
+            },
+            {
+                "command": "luarad.utils.createModuleFunction",
+                "key": "CTRL+L CTRL+M",
+                "when": "editorTextFocus && editorLangId == lua"
+            },
+            {
+                "command": "luarad.utils.LoadLuaScript",
+                "key": "CTRL+L CTRL+E"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "LuaRad Configuration",
+            "properties": {
+                "luarad.macroList": {
+                    "type": "array",
+                    "default": [],
+                    "description": "luarad 宏变量申明",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "luarad.luaTemplatesDir": {
+                    "type": "string",
+                    "default": "",
+                    "description": "luarad 模板文件夹"
+                },
+                "luarad.luaOperatorCheck": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "检查代码中运算符号是否正确,如果重载了运算符 需要将该项设置为false"
+                },
+                "luarad.luaFunArgCheck": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否检查方法参数相同,如果为true 一个方法中出现相同的参数名就会报错,为false 就忽略"
+                },
+                "luarad.isShowDest": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否显示介绍網頁"
+                },
+                "luarad.changeTextCheck": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "代码修改时是否检查lua语法是否正确"
+                },
+                "luarad.moduleFunNestingCheck": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "模块方法嵌套检查,如果在一个方法中出现另外一个模块方法会认为是错误的"
+                },
+                "luarad.scriptRoots": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "lua代码文件夹根目录(可以设置多个目录),用以require 时提示路径"
+                },
+                "luarad.maxFileSize": {
+                    "type": "number",
+                    "default": 2048,
+                    "description": "解析的lua文件最大文件大小,默认为2MB,超过此设置将不解析"
+                },
+                "luarad.showOnLine": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否显示luarad 当前使用人数"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "mocha": "^2.3.3",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42",
+        "@types/socket.io": "^1.4.27",
+        "@types/socket.io-client": "^1.4.27"
+    },
+    "dependencies": {
+        "vscode-debugadapter": "^1.17.0",
+        "vscode-debugprotocol": "^1.17.0",
+        "vscode-languageclient": "^3.1.0"
+    }
+}

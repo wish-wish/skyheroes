@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{9d4003ff-d468-4e9c-9f3b-df7f7f97cfba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{33c760d1-95f5-484a-ae61-6d573f8ff43a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{1db87117-d61a-4f13-996e-d2ddc603693d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{44efa582-6e39-41f2-b279-0e96aaeb32ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{93de1fc4-b76d-4f07-ac9b-1fe377822bfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{0bc11bf0-4a06-46c3-9fd5-cd6b98b77912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\record">
+      <UniqueIdentifier>{8262b3b2-b89b-473c-be3e-856a4e97a990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\record">
+      <UniqueIdentifier>{6eef4a26-2e83-46bd-ae84-f9364df2c61f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\record">
+      <UniqueIdentifier>{751df7ae-2d2c-4a45-ab20-824b9ccbbb9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\record">
+      <UniqueIdentifier>{e33791c7-8dfb-4520-bf01-3e342a579d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\record">
+      <UniqueIdentifier>{fd953431-b41a-45de-a6e6-1afbbe102995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{9f08fb25-5236-470b-be4b-4c91e10dd165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{d08778ec-6055-4e56-a417-f1a4d8d47f1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{40c7163b-f40c-4266-98e1-18426484ed68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{3436ec47-3098-4186-b3c2-4e5ef031e3a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{65081274-d75c-49a3-9018-1e158da8054e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{196e7956-796a-4569-a410-b7b48d6c7714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{e0948a7e-ecd8-4cce-94be-42136750f53b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{0680e492-d06c-45fd-907c-6e6665d599e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{ebaace04-3fdc-46df-bf7d-7913c0b1d0bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{72b820a6-8d00-4b29-ad28-f981228e9bdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{93fe7fa2-ff5c-4081-add1-628a4cd7d5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{ccc21ba6-8fb2-4bbf-a3ab-e9ef599dd0da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{dacc5732-eb5c-4a64-a085-a81e472d2790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{58116f72-f902-4932-b018-7cfd05bf1d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{042c7c22-a99b-4460-9bd2-cbcb24bc0004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{52fd57f3-6e4f-4ec2-a5c5-c10c867c7363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{30d2c0d7-db83-4614-951b-acc6a118c5d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\statem">
+      <UniqueIdentifier>{72a3043d-7ba9-47a6-a6b9-3b3a6474bf00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\statem">
+      <UniqueIdentifier>{cb47eea9-6c51-4f5c-86ff-c975b372d198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\statem">
+      <UniqueIdentifier>{022dc30c-da3a-4639-9c8f-d4d20f59bcd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\statem">
+      <UniqueIdentifier>{70f6aef4-0ca8-4534-a6e7-787cf54a5c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl\statem">
+      <UniqueIdentifier>{620582df-14bc-492b-8583-562504d3fa0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{ec7760c1-6170-41d9-9f31-a365e26b6952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{769a7578-3aec-417a-972b-0467d3f5edd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{06145f9d-c348-4047-aaa3-13e648ebf1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{e7c7dde1-19f3-47cc-a383-330cf04db3c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{a641bc99-0981-4d90-889d-d84233c75284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ssl">
+      <UniqueIdentifier>{a6c3e782-8c06-4ba8-a80b-5667a3fb9d3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ssl\bio_ssl.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\d1_lib.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\d1_msg.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\d1_srtp.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\methods.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\pqueue.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\record\dtls1_bitmap.c">
+      <Filter>源文件\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\record\rec_layer_d1.c">
+      <Filter>源文件\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\record\rec_layer_s3.c">
+      <Filter>源文件\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\record\ssl3_buffer.c">
+      <Filter>源文件\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\record\ssl3_record.c">
+      <Filter>源文件\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\s3_cbc.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\s3_enc.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\s3_lib.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\s3_msg.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_asn1.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_cert.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_ciph.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_conf.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_err.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_init.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_lib.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_mcnf.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_rsa.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_sess.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_stat.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_txt.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\ssl_utst.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\statem\statem.c">
+      <Filter>源文件\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\statem\statem_clnt.c">
+      <Filter>源文件\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\statem\statem_dtls.c">
+      <Filter>源文件\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\statem\statem_lib.c">
+      <Filter>源文件\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\statem\statem_srvr.c">
+      <Filter>源文件\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\t1_enc.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\t1_ext.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\t1_lib.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\t1_reneg.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\t1_trce.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="ssl\tls_srp.c">
+      <Filter>源文件\ssl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="libssl-1_1-x64.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

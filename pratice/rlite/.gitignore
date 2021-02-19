@@ -1,0 +1,17 @@
+*.o
+*.a
+/*/*-test
+/*/rlite-test.rld
+*.gcov
+*.gcda
+*.gcno
+/src/lcov/app.info
+/src/lcov/html
+/src/malloc-debug
+*.dylib
+*.so
+*.pc
+deps/lua/src/luac
+deps/lua/src/lua
+*.rld
+.*.rld.wal

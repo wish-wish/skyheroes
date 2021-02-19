@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{1362EE31-7FCC-A2A8-C80A-544E34B480FD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{5865280E-C479-50BF-8DFB-F31EF9CE4CF0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute">
+      <UniqueIdentifier>{a1af1d9c-6410-434b-bc99-9c0b85bd44c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute\Utilities">
+      <UniqueIdentifier>{35021974-631d-4c7c-8114-1798d2a5a579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute\Tests">
+      <UniqueIdentifier>{fdd9a2b9-a1f9-4941-a936-ffbff2e6a557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute\Enhancements">
+      <UniqueIdentifier>{3454b13d-f2f1-43bb-871e-e5f8a2fdf0ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute\Enhancements\Controllers">
+      <UniqueIdentifier>{213f2a9c-7e33-4e72-b2ca-790f0a5734c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute\Enhancements\FixedPoint">
+      <UniqueIdentifier>{fb5cc29b-e2e6-49f8-94da-7308a165d74a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contribute\Enhancements\Shapes">
+      <UniqueIdentifier>{590e075c-13a1-462c-9a03-b66bc8e3fced}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Testbed\Framework\DebugDraw.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Framework\Test.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\AddPair.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\ApplyForce.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\BasicSliderCrank.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\BodyTypes.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Breakable.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Bridge.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\BulletTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Cantilever.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Car.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Chain.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\CharacterCollision.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\CollisionFiltering.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\CollisionProcessing.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\CompoundShapes.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Confined.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\ContinuousTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\ConvexHull.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\ConveyorBelt.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\DistanceTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Dominos.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\DumpShell.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\DynamicTreeTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\EdgeShapes.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\EdgeTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Gears.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\HeavyOnLight.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\HeavyOnLightTwo.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Mobile.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\MobileBalanced.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\MotorJoint.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\OneSidedPlatform.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Pinball.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\PolyCollision.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\PolyShapes.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Prismatic.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Pulleys.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Pyramid.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\RayCast.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Revolute.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Rope.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\RopeJoint.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\SensorTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\ShapeEditing.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Skier.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\SliderCrank.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\SphereStack.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\TheoJansen.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Tiles.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\TimeOfImpact.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Tumbler.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\VaryingFriction.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\VaryingRestitution.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\VerticalStack.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\Web.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testbed\Tests\chainProblem.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\Controllers\b2BuoyancyController.h">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\Controllers\b2ConstantAccelController.h">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\Controllers\b2ConstantForceController.h">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\Controllers\b2Controller.h">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\Controllers\b2GravityController.h">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\Controllers\b2TensorDampingController.h">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\FixedPoint\Fixed.h">
+      <Filter>Contribute\Enhancements\FixedPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Enhancements\FixedPoint\jtypes.h">
+      <Filter>Contribute\Enhancements\FixedPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Utilities\ConvexDecomposition\b2Polygon.h">
+      <Filter>Contribute\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Utilities\ConvexDecomposition\b2Triangle.h">
+      <Filter>Contribute\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\Biped.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\BipedDef.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\BipedTest.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\BreakableBody.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\Car.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\ContactCallbackTest.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\DynamicEdges.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\ElasticBody.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\PyramidStaticEdges.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Contributions\Tests\StaticEdges.h">
+      <Filter>Contribute\Tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Testbed\Framework\DebugDraw.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Testbed\Framework\Main.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Testbed\Framework\Test.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Testbed\Tests\TestEntries.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Enhancements\Controllers\b2BuoyancyController.cpp">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Enhancements\Controllers\b2ConstantAccelController.cpp">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Enhancements\Controllers\b2ConstantForceController.cpp">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Enhancements\Controllers\b2Controller.cpp">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Enhancements\Controllers\b2GravityController.cpp">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Enhancements\Controllers\b2TensorDampingController.cpp">
+      <Filter>Contribute\Enhancements\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Utilities\ConvexDecomposition\b2Polygon.cpp">
+      <Filter>Contribute\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Utilities\ConvexDecomposition\b2Triangle.cpp">
+      <Filter>Contribute\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Tests\Biped.cpp">
+      <Filter>Contribute\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Contributions\Tests\BipedDef.cpp">
+      <Filter>Contribute\Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

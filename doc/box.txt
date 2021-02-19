@@ -1,0 +1,18 @@
+1、
+Fixture 	固定装置
+Impulse 	推动 脉冲
+tangentImpulse 	切线脉冲 
+Contact 	触点 使联系
+Manifold 	使…多样化
+Solve 		计算
+FrictionImpulse 摩擦力脉冲
+Density     	密度
+
+friction	摩擦力
+Restitution 	补偿
+
+b2Fixture
+b2Joint
+b2JointEdge
+b2Contact
+b2ContactEdge

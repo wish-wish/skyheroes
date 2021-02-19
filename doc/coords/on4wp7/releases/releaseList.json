@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "0",
+    "Name": "0.1 Alpha",
+    "DevelopmentStatus": "Alpha",
+    "Description": "This is the 0.1 alpha release.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-02-02T22:44:56.34-08:00",
+    "Files": [
+      {
+        "Id": "0227ef76-df9a-4e3d-9f19-ca68d66ebffc",
+        "FileName": "on4wp7-0.1a.7z",
+        "Url": "./0/0227ef76-df9a-4e3d-9f19-ca68d66ebffc",
+        "Type": "Source Code",
+        "UploadDate": "2012-03-17T22:41:05.343-07:00"
+      },
+      {
+        "Id": "adfac23e-b497-4d94-806a-3a5ee17530e9",
+        "FileName": "MTDownloader.7z",
+        "Url": "./0/adfac23e-b497-4d94-806a-3a5ee17530e9",
+        "Type": "Application",
+        "UploadDate": "2012-06-23T04:56:00.96-07:00"
+      },
+      {
+        "Id": "c91ce212-b86a-4554-9cbf-4306e7b4a593",
+        "FileName": "GOMapData.7z",
+        "Url": "./0/c91ce212-b86a-4554-9cbf-4306e7b4a593",
+        "Type": "Example",
+        "UploadDate": "2012-06-23T05:08:04.653-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "0.2 Beta",
+    "DevelopmentStatus": "Beta",
+    "Description": "This is the 0.2 beta release.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-02-02T22:46:23.357-08:00",
+    "Files": [
+      {
+        "Id": "9a4977e2-4180-4322-bad8-f4af1dadc0e2",
+        "FileName": "on4wp7-0.2b.7z",
+        "Url": "./1/9a4977e2-4180-4322-bad8-f4af1dadc0e2",
+        "Type": "Application",
+        "UploadDate": "2013-02-02T22:46:23.187-08:00"
+      }
+    ]
+  }
+]

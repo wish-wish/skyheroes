@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://switch2osm.org/wp-content/themes/picolight/js/jquery.cycle.lite.js'></script>
+	<title>Manually building a tile server (12.04) | switch2osm</title>
+
+<link rel="stylesheet" href="https://switch2osm.org/wp-content/plugins/sitepress-multilingual-cms/res/css/language-selector.css?v=3.3.3" type="text/css" media="all" />
+
+			
+
+		<link rel="stylesheet" href="https://switch2osm.org/wp-content/themes/picolight/style.css" type="text/css" media="screen" />
+	<link rel="pingback" href="https://switch2osm.org/xmlrpc.php" />
+
+	<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="switch2osm &raquo; Feed" href="https://switch2osm.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="switch2osm &raquo; Comments Feed" href="https://switch2osm.org/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/switch2osm.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wpml-cms-nav-css-css'  href='https://switch2osm.org/wp-content/plugins/wpml-cms-nav/res/css/navigation.css?ver=1.4.14' type='text/css' media='all' />
+<link rel='stylesheet' id='cms-navigation-style-base-css'  href='https://switch2osm.org/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation-base.css?ver=1.4.14' type='text/css' media='screen' />
+<link rel='stylesheet' id='cms-navigation-style-css'  href='https://switch2osm.org/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation.css?ver=1.4.14' type='text/css' media='screen' />
+<script type='text/javascript' src='https://switch2osm.org/wp-content/themes/picolight/js/respond.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='https://switch2osm.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://switch2osm.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://switch2osm.org/wp-content/plugins/sitepress-multilingual-cms/res/js/jquery.cookie.js?ver=3.3.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpml_browser_redirect_params = {"pageLanguage":"en","languageUrls":{"en_US":"https:\/\/switch2osm.org\/serving-tiles\/manually-building-a-tile-server-12-04\/","en":"https:\/\/switch2osm.org\/serving-tiles\/manually-building-a-tile-server-12-04\/","US":"https:\/\/switch2osm.org\/serving-tiles\/manually-building-a-tile-server-12-04\/","fr_FR":"https:\/\/switch2osm.org\/fr\/servir-des-tuiles\/mettre-en-place-manuellement-un-serveur-de-tuiles-12-04\/","fr":"https:\/\/switch2osm.org\/fr\/servir-des-tuiles\/mettre-en-place-manuellement-un-serveur-de-tuiles-12-04\/","FR":"https:\/\/switch2osm.org\/fr\/servir-des-tuiles\/mettre-en-place-manuellement-un-serveur-de-tuiles-12-04\/"},"cookie":{"name":"_icl_visitor_lang_js","domain":"switch2osm.org","path":"\/","expiration":24}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://switch2osm.org/wp-content/plugins/sitepress-multilingual-cms/res/js/browser-redirect.js?ver=3.3.3'></script>
+<link rel='https://api.w.org/' href='https://switch2osm.org/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://switch2osm.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://switch2osm.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.5" />
+<link rel="canonical" href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-12-04/" />
+<link rel='shortlink' href='https://switch2osm.org/?p=248' />
+<link rel="alternate" type="application/json+oembed" href="https://switch2osm.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswitch2osm.org%2Fserving-tiles%2Fmanually-building-a-tile-server-12-04%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://switch2osm.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswitch2osm.org%2Fserving-tiles%2Fmanually-building-a-tile-server-12-04%2F&#038;format=xml" />
+<meta name="generator" content="WPML ver:3.3.3 stt:1,4,3,27,28,47,2;" />
+<link rel="alternate" hreflang="en-US" href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-12-04/" />
+<link rel="alternate" hreflang="fr-FR" href="https://switch2osm.org/fr/servir-des-tuiles/mettre-en-place-manuellement-un-serveur-de-tuiles-12-04/" />
+
+<style type="text/css">                            
+</style>
+<style type="text/css">
+	a, #comments h3, h3#reply-title {color: #364D96;}
+</style>
+</head>
+
+<body onload="jQuery('#headerimage').cycle({fx: 'fade', speed: 1000, timeout: 7000});" class="page-template-default page page-id-248 page-child parent-pageid-15">
+<div id="wrapper">
+	<div id="header">
+		<h1><a href="https://switch2osm.org">switch2osm</a></h1>
+		<p class="description">Make the switch to OpenStreetMap</p>
+	         <div id="headerimage">
+                <div id="div-rich-data"><div class="info">
+                        <h2>Rich data</h2>
+                        <p>OpenStreetMap data is rich and detailed, containing huge amounts
+                        of data which is relevant to people on the ground - the people who
+                        collected it.</p>
+                        <p>Features include:</p>
+                        <ul>
+                                <li>Roads, railways, waterways, etc...</li>
+                                <li>Restaurants, shops, stations, ATMs and more.</li>
+                                <li>Walking and cycling paths.</li>
+                                <li>Buildings, campuses, etc...</li>
+                        </ul>
+                </div></div>
+                <div id="div-up-to-date"><div class="info">
+                        <h2>Up to date</h2>
+                        <p>OpenStreetMap is updated every minute of every hour of every day,
+                        and these updates are available to you in real-time.</p>
+                        <p>Our fantastic community is making OpenStreetMap better right now. If there are
+                        features you need - you can add them and see them live within minutes.</p>
+                </div></div>
+                <div id="div-tune-xp"><div class="info">
+                        <h2>Tune your experience</h2>
+                        <p>Why does your map have to look the same as every other one on the
+                        internet?</p>
+                        <p>With OpenStreetMap data you can create your own map, showing
+                        the features that <em>you</em> want to show, the features which are
+                        important to <em>your</em> users.</p>
+                </div></div>
+                <div id="div-global"><div class="info">
+                        <h2>Global data</h2>
+                        <p>OpenStreetMap data covers the whole world, making it easy to
+                        support users in any country, or every country.</p>
+                        <p>With localised and translated names, you can see maps in the
+                        language you want to see them in.</p>
+                </div></div>
+                <div id="div-no-license-fee"><div class="info">
+                        <h2>No licensing fee</h2>
+                        <p>OpenStreetMap data is free and open - there is no subscription
+                        fee and no page-view fee.</p>
+                        <p>With OpenStreetMap data, your only obligations are to attribute
+                        and share-alike, as explained in our license.</p>
+                </div></div>
+        </div>
+
+<!--		<img id="headerimage" src="https://switch2osm.org/wp-content/uploads/2013/03/cropped-rich_data1.png" alt="" /> -->
+		<div id="mainnav">
+				<div class="menu-s2o-navigation-container"><ul id="menu-s2o-navigation" class="menu"><li id="menu-item-355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="https://switch2osm.org/why-switch/">Why Switch?</a></li>
+<li id="menu-item-343" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-343"><a href="https://switch2osm.org/case-studies/">Case Studies</a></li>
+<li id="menu-item-354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-354"><a href="https://switch2osm.org/the-basics/">The Basics</a></li>
+<li id="menu-item-351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-351"><a href="https://switch2osm.org/using-tiles/">Using Tiles</a>
+<ul class="sub-menu">
+	<li id="menu-item-353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-353"><a href="https://switch2osm.org/using-tiles/getting-started-with-leaflet/">Getting started with Leaflet</a></li>
+	<li id="menu-item-352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-352"><a href="https://switch2osm.org/using-tiles/getting-started-with-openlayers/">Getting started with OpenLayers</a></li>
+</ul>
+</li>
+<li id="menu-item-346" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-346"><a href="https://switch2osm.org/serving-tiles/">Serving Tiles</a>
+<ul class="sub-menu">
+	<li id="menu-item-349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-349"><a href="https://switch2osm.org/serving-tiles/building-a-tile-server-from-packages/">Building a tile server from packages</a></li>
+	<li id="menu-item-597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-597"><a href="https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/">Manually building a tile server (16.04.2 LTS)</a></li>
+	<li id="menu-item-391" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-391"><a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-14-04/">Manually building a tile server (14.04)</a></li>
+	<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-248 current_page_item menu-item-347"><a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-12-04/">Manually building a tile server (12.04)</a></li>
+	<li id="menu-item-348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348"><a href="https://switch2osm.org/serving-tiles/using-an-all-in-one-solution/">Using an all-in-one solution</a></li>
+</ul>
+</li>
+<li id="menu-item-342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342"><a href="https://switch2osm.org/other-uses/">Other Uses</a></li>
+<li id="menu-item-345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345"><a href="https://switch2osm.org/providers/">Providers</a></li>
+<li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-344"><a href="https://switch2osm.org/find-out-more/">Find Out More</a></li>
+</ul></div>		</div>
+	</div>
+	<div id="main">
+
+	<div id="content">
+
+				<div class="pages">
+			<div class="title">
+				<h1><a href="https://switch2osm.org/serving-tiles/manually-building-a-tile-server-12-04/" title="Manually building a tile server (12.04)">Manually building a tile server (12.04)</a></h1>
+			</div>
+			<div class="meta">
+							</div>
+			
+			<div class="entry">
+				<p>This page describes how to install, setup and configure all the necessary software to operate your own tile server. The step-by-step instructions are written for <a href="http://www.ubuntu.com/">Ubuntu Linux</a> 12.04 LTS (Precise Pangolin), however they should transfer fairly straightforwardly to other versions of Ubuntu or Linux distributions.</p>
+<p><em>This howto is based on an <a title="earlier version" href="/?page_id=76">earlier version for Ubuntu Linux 10.04</a></em></p>
+<h1>Software installation</h1>
+<p>The OSM tile server stack is a collection of programs and libraries that work together to create a tile server. As so often with OpenStreetMap, there are many ways to achieve this goal and nearly all of the components have alternatives that have various specific advantages and disadvantages. This tutorial describes the most standard version that is also used on the main OpenStreetMap.org tile server.</p>
+<p>It consists of 5 main components: Mod_tile, renderd, mapnik, osm2pgsql and a postgresql/postgis database. Mod_tile is an apache module, that serves cached tiles and decides which tiles need re-rendering &#8211; either because they are not yet cached or because they are outdated. Renderd provides a priority queueing system for rendering requests to manage and smooth out the load from rendering requests. Mapnik is the software library that does the actual rendering and is used by renderd.</p>
+<p>In order to build these components, a variety of dependencies need to be installed first.</p>
+<p>Mapnik requires a recent version of Boost, which can be installed on Ubuntu like this:</p>
+<div>
+<pre>sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:mapnik/boost
+sudo apt-get update
+sudo apt-get install libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-system-dev libboost-thread-dev</pre>
+</div>
+<p>The remaining dependencies can be installed with the following instructions</p>
+<pre>sudo apt-get install subversion git-core tar unzip wget bzip2 build-essential autoconf libtool libxml2-dev libgeos-dev libpq-dev libbz2-dev proj munin-node munin libprotobuf-c0-dev protobuf-c-compiler libfreetype6-dev libpng12-dev libtiff4-dev libicu-dev libgdal-dev libcairo-dev libcairomm-1.0-dev apache2 apache2-dev libagg-dev liblua5.2-dev ttf-unifont</pre>
+<h3>Installing postgresql / postgis</h3>
+<p>On Ubuntu there are pre-packaged versions of both postgis and postgresql, so these can simply be installed via the Ubuntu package manager.</p>
+<pre>sudo apt-get install postgresql-9.1-postgis postgresql-contrib postgresql-server-dev-9.1</pre>
+<p>Now you need to create a postgis database. The defaults of various programs assume the database is called gis and we will use the same convention in this tutorial, although this is not necessary. Substitute your username for <em>username</em> in the two places below. This should be the username that will render maps with Mapnik.</p>
+<pre>sudo -u postgres -i
+createuser username # answer yes for superuser (although this isn't strictly necessary)
+createdb -E UTF8 -O username gis
+exit</pre>
+<p>Set up PostGIS on the postresql database:</p>
+<pre>psql -f /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql -d gis</pre>
+<p>This should respond with many lines ending with:</p>
+<pre>...
+CREATE FUNCTION
+COMMIT
+...
+DROP FUNCTION</pre>
+<p>Give your newly-created user permission to access some of the PostGIS extensions&#8217; data. Make sure you replace username with your user&#8217;s name:</p>
+<pre>psql -d gis -c "ALTER TABLE geometry_columns OWNER TO username; ALTER TABLE spatial_ref_sys OWNER TO username;"</pre>
+<h3>Installing osm2pgsql</h3>
+<p>Although there might be a osm2pgsql package in the repository, it is likely rather old and so we need to compile a newer one from source</p>
+<pre>mkdir ~/src
+cd ~/src
+git clone git://github.com/openstreetmap/osm2pgsql.git
+cd osm2pgsql
+./autogen.sh
+./configure
+make
+sudo make install
+psql -f /usr/local/share/osm2pgsql/900913.sql -d gis</pre>
+<h3>Install Mapnik library</h3>
+<p>Next, we need to install the Mapnik library. Mapnik is used to render the OpenStreetMap data into the tiles used for an OpenLayers web map.</p>
+<p>Build the Mapnik library from source:</p>
+<pre>cd ~/src
+git clone git://github.com/mapnik/mapnik
+cd mapnik
+git branch 2.0 origin/2.0.x
+git checkout 2.0
+
+python scons/scons.py configure INPUT_PLUGINS=all OPTIMIZATION=3 SYSTEM_FONTS=/usr/share/fonts/truetype/
+python scons/scons.py
+sudo python scons/scons.py install
+sudo ldconfig</pre>
+<p>Verify that Mapnik has been installed correctly:</p>
+<pre>python
+&gt;&gt;&gt; import mapnik
+&gt;&gt;&gt;</pre>
+<p>If python replies with the second chevron prompt &gt;&gt;&gt; and without errors, then Mapnik library was found by Python. Congratulations!</p>
+<h3>Install mod_tile and renderd</h3>
+<p>Compile the mod_tile source code:</p>
+<pre>cd ~/src
+git clone git://github.com/openstreetmap/mod_tile.git
+cd mod_tile
+./autogen.sh
+./configure
+make
+sudo make install
+sudo make install-mod_tile
+sudo ldconfig</pre>
+<h3>Install Mapnik style-sheet</h3>
+<p>NOTE:  This section describes how to use the old XML-based stylesheet from a few years ago.  It should still work, but doesn&#8217;t reflect the current OpenStreetMap &#8220;standard&#8221; style.  If you’d like a map that looks exactly that, you’ll need to use the <a href="https://github.com/gravitystorm/openstreetmap-carto">openstreetmap-carto</a> project which has <a href="https://github.com/gravitystorm/openstreetmap-carto/blob/master/INSTALL.md">its own installation instructions</a>.  Lots of <a title="other styles" href="https://github.com/search?utf8=%E2%9C%93&amp;q=project+extension%3Amml&amp;type=Code&amp;ref=searchresults" target="_blank">other styles</a> are also available.</p>
+<p>Next, we need to install the OpenStreetMap Mapnik tools, which include the default style file and tools to help Mapnik render OpenStreetMap data:</p>
+<pre>cd ~/src
+svn co http://svn.openstreetmap.org/applications/rendering/mapnik mapnik-style</pre>
+<p>Mapnik uses prepared files to generate coastlines and ocean areas for small scale maps since it is faster than reading the entire database for this information. Downloading the coastline data requires about 400Mb of download.</p>
+<pre>cd ~/src/mapnik-style
+sudo ./get-coastlines.sh /usr/local/share</pre>
+<h1>Software configuration</h1>
+<p>Now that all of the necessary software is installed, you will need to configure some of the software to work correctly.</p>
+<h3>Configure mapnik style-sheet</h3>
+<p>In order for mapnik to find the correct postgis database and the coast line data, you will need to configure the mapnik style-sheet to your local settings. There are a number of different style-sheets publically available and you can of course create your own ones. Each style-sheet might be slightly different in how to configure it and so this page describes how to configure the &#8220;default&#8221; OpenStreetMap style-sheet that was installed with the mapnik-tools.</p>
+<p>In your style-sheet directory (e.g. ~/src/mapnik-style) there should be a directory inc. There are a number of files you need to adapt in this directory:</p>
+<pre>cd inc
+cp fontset-settings.xml.inc.template fontset-settings.xml.inc
+cp datasource-settings.xml.inc.template datasource-settings.xml.inc
+cp settings.xml.inc.template settings.xml.inc</pre>
+<p>Now you need to modify each of these files:</p>
+<h5>settings.xml.inc</h5>
+<p>replace</p>
+<pre>&lt;!ENTITY symbols "%(symbols)s"&gt;</pre>
+<p>with</p>
+<pre>&lt;!ENTITY symbols "symbols"&gt;</pre>
+<p>replace</p>
+<pre>&lt;!ENTITY osm2pgsql_projection "&amp;srs%(epsg)s;"&gt;</pre>
+<p>with (assuming you will be using the defaul projection 900913)</p>
+<pre>&lt;!ENTITY osm2pgsql_projection "&amp;srs900913;"&gt;</pre>
+<p>replace</p>
+<pre>&lt;!ENTITY dwithin_node_way "&amp;dwithin_%(epsg)s;"&gt;</pre>
+<p>with (assuming you will be using the default projection 900913)</p>
+<pre>&lt;!ENTITY dwithin_node_way "&amp;dwithin_900913;"&gt;</pre>
+<p>replace</p>
+<pre>&lt;!ENTITY world_boundaries "%(world_boundaries)s"&gt;</pre>
+<p>with (assuming you installed the coast line data in /usr/local/share/world_boundaries)</p>
+<pre>&lt;!ENTITY world_boundaries "/usr/local/share/world_boundaries"&gt;</pre>
+<p>replace</p>
+<pre>&lt;!ENTITY prefix "%(prefix)s"&gt;</pre>
+<p>with (assuming you are using the default database table prefix)</p>
+<pre>&lt;!ENTITY prefix "planet_osm"&gt;</pre>
+<h5>datasource-settings.xml.inc</h5>
+<p>In this file you will need to enter your database settings. You are running postgresql on the same machine as the rendering stack, so you can comment out the parameters “password”, “host” and “port” with an HTML-style comment. This will enable mapnik to use the “unix local user” as an authentication method.</p>
+<p>Change the &#8220;dbname&#8221; from &#8220;%(dbname)s&#8221; to &#8220;gis&#8221;, &#8220;estimate_extent&#8221; to &#8220;false&#8221;, and &#8220;extent&#8221; to &#8220;-20037508,-19929239,20037508,19929239&#8221; so that the file now reads:</p>
+<pre>&lt;!--
+Settings for your postgres setup.
+
+Note: feel free to leave password, host, port, or use blank
+--&gt;
+
+&lt;Parameter name="type"&gt;postgis&lt;/Parameter&gt;
+&lt;!-- &lt;Parameter name="password"&gt;%(password)s&lt;/Parameter&gt; --&gt;
+&lt;!-- &lt;Parameter name="host"&gt;%(host)s&lt;/Parameter&gt; --&gt;
+&lt;!-- &lt;Parameter name="port"&gt;%(port)s&lt;/Parameter&gt; --&gt;
+&lt;!-- &lt;Parameter name="user"&gt;%(user)s&lt;/Parameter&gt; --&gt;
+&lt;Parameter name="dbname"&gt;gis&lt;/Parameter&gt;
+&lt;!-- this should be 'false' if you are manually providing the 'extent' --&gt;
+&lt;Parameter name="estimate_extent"&gt;false&lt;/Parameter&gt;
+&lt;!-- manually provided extent in epsg 900913 for whole globe --&gt;
+&lt;!-- providing this speeds up Mapnik database queries --&gt;
+&lt;Parameter name="extent"&gt;-20037508,-19929239,20037508,19929239&lt;/Parameter&gt;</pre>
+<h5>fontset-settings.xml.inc</h5>
+<p>This file contains font definitions, and information about how to change the default font.  It is recommended that you don&#8217;t edit this right now.</p>
+<h3>Configure renderd</h3>
+<p>Change the the renderd settings by editing the /usr/local/etc/renderd.conf and change the following lines like so (remember to change username to your user&#8217;s name):</p>
+<pre>socketname=/var/run/renderd/renderd.sock
+plugins_dir=/usr/local/lib/mapnik/input
+font_dir=/usr/share/fonts/truetype/ttf-dejavu
+XML=/home/username/src/mapnik-style/osm.xml
+HOST=localhost</pre>
+<p>Create the files required for the mod_tile system to run (remember to change username to your user&#8217;s name):</p>
+<pre>sudo mkdir /var/run/renderd
+sudo chown username /var/run/renderd
+sudo mkdir /var/lib/mod_tile
+sudo chown username /var/lib/mod_tile</pre>
+<h3>Configure mod_tile</h3>
+<p>Next, we need to tell the Apache web server about our new mod_tile installation by creating the file /etc/apache2/conf.d/mod_tile and adding one line:</p>
+<pre>LoadModule tile_module /usr/lib/apache2/modules/mod_tile.so</pre>
+<p>Also, Apache&#8217;s default website configuration file needs to be modified to include mod_tile settings. Modify the file /etc/apache2/sites-available/default to include the following lines immediately after the admin e-mail address line:</p>
+<pre>LoadTileConfigFile /usr/local/etc/renderd.conf
+ModTileRenderdSocketName /var/run/renderd/renderd.sock
+# Timeout before giving up for a tile to be rendered
+ModTileRequestTimeout 0
+# Timeout before giving up for a tile to be rendered that is otherwise missing
+ModTileMissingRequestTimeout 30</pre>
+<h1>Tuning your system</h1>
+<p>A tile server can put a lot of load on hard- and software. The default settings may therefore not be appropriate and a significant improvement can potentially be achieved through tuning various parameters.</p>
+<h3>Tuning postgresql</h3>
+<p>The default configuration for PostgreSQL 9.1 needs to be tuned for the amount of data you are about to add to it. Edit the file /etc/postgresql/9.1/main/postgresql.conf and make the following changes:</p>
+<pre>shared_buffers = 128MB
+checkpoint_segments = 20
+maintenance_work_mem = 256MB
+autovacuum = off</pre>
+<p>These changes require a kernel configuration change, which needs to be applied every time that the computer is rebooted. As root, edit /etc/sysctl.conf and add these lines near the top after the other &#8220;kernel&#8221; definitions:</p>
+<pre># Increase kernel shared memory segments - needed for large databases
+kernel.shmmax=268435456</pre>
+<p>Reboot your computer. Run this:</p>
+<pre>sudo sysctl kernel.shmmax</pre>
+<p>and verify that it displays as 268435456.</p>
+<h1>Loading data into your server</h1>
+<h3>Get the latest OpenStreetMap data</h3>
+<p>Retrieve a piece of OpenStreetMap data from http://planet.openstreetmap.org/. Since the whole planet is at least 18GB when compressed, there are links to smaller country or state sized extracts on that page. Since it is smaller and faster to interact with, the PBF file format is preferable when available. In this case we&#8217;ll download the entire planet file by issuing the following command:</p>
+<pre>cd planet
+wget http://planet.openstreetmap.org/pbf/planet-latest.osm.pbf</pre>
+<h3>Importing data into the database</h3>
+<p>With the conversion tool compiled and the database prepared, the following command will insert the OpenStreetMap data you downloaded earlier into the database. This step is very disk I/O intensive and will take anywhere from 10 hours on a fast server with SSDs to several days for the full planet depending on the speed of the computer performing the import. For smaller extracts the import time is much faster accordingly, and you may need to experiment with different -C values to fit within your machine&#8217;s available memory.</p>
+<pre>osm2pgsql --slim -d gis -C 16000 --number-processes 3 ~/planet/planet-latest.osm.pbf</pre>
+<p>Let&#8217;s have a look at your data import as it progresses. The first part of the osm2pgsql output looks scary, but is normal:</p>
+<pre>Using projection SRS 900913 (Spherical Mercator)
+Setting up table: planet_osm_point
+NOTICE: table "planet_osm_point" does not exist, skipping
+NOTICE: table "planet_osm_point_tmp" does not exist, skipping
+Setting up table: planet_osm_line
+NOTICE: table "planet_osm_line" does not exist, skipping
+NOTICE: table "planet_osm_line_tmp" does not exist, skipping
+Setting up table: planet_osm_polygon
+NOTICE: table "planet_osm_polygon" does not exist, skipping
+NOTICE: table "planet_osm_polygon_tmp" does not exist, skipping
+Setting up table: planet_osm_roads
+NOTICE: table "planet_osm_roads" does not exist, skipping
+NOTICE: table "planet_osm_roads_tmp" does not exist, skipping
+Mid: pgsql, scale=100, cache=4096MB, maxblocks=524289*8192
+Setting up table: planet_osm_nodes
+NOTICE: table "planet_osm_nodes" does not exist, skipping
+NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index "planet_osm_nodes_pkey" for table "planet_osm_nodes"
+Setting up table: planet_osm_ways
+NOTICE: table "planet_osm_ways" does not exist, skipping
+NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index "planet_osm_ways_pkey" for table "planet_osm_ways"
+Setting up table: planet_osm_rels
+NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index "planet_osm_rels_pkey" for table "planet_osm_rels"</pre>
+<p>Don&#8217;t be concerned by the NOTICE: entries above. All normal. Next, osm2pgsql will start reading the compressed planet file.</p>
+<pre>Reading in file: /home/user/planet/planet-latest.osm.bz2</pre>
+<p>As osm2pgsql reads the planet file it will give progress reports. The line below will refresh every few seconds and update the numbers in brackets. This part of the import takes a long time. Depending on your server, it will take between hours and days.</p>
+<pre>Processing: Node(10140k 200.1k/s) Way(0k 0.00k/s) Relation(0k 0.00/s)</pre>
+<p>As the import proceeds, first the Node number will increase untill they are all imported, then the Way number and finally the Relation number. The speed at which the import occurs depends strongly on the hardware available and if the node cache fits into ram. That said, if your node cache is big enough, you can probably expect the speed of nodes to be on the order of a few hundred k per second for nodes, a few 10s of k per second for ways and a few hundred per second for relations. If the node cache does not fit into ram or you have set the cache value to low, the process can be an order of magnitude slower. If you are importing the full planet, the import can take days. If you are only importing single countries, the time should be cut down to minutes or hours. Do not interrupt the import process unless you have decided to start over again from the beginning.</p>
+<pre>Processing: Node(593072k) Way(45376k) Relation(87k)
+Exception caught processing way id=110802
+Exception caught processing way id=110803
+Processing: Node(593072k) Way(45376k) Relation(474k)</pre>
+<p>The exceptions shown above are due to minor errors in the planet file. The planet import is still proceeding normally.</p>
+<p>The next stage of the osm2pgsql planet import process also will take between hours and days, depending on your hardware. It begins like this:</p>
+<pre>Node stats: total(593072533), max(696096737)
+Way stats: total(45376969), max(55410575)
+Relation stats: total(484528), max(555276)
+Going over pending ways
+processing way (752k)</pre>
+<p>The processing way number should update approximately each second.</p>
+<pre>Going over pending relations
+node cache: stored: 515463899(86.91%), storage efficiency: 96.01%, hit rate: 85.97%
+Committing transaction for planet_osm_roads
+Committing transaction for planet_osm_line
+Committing transaction for planet_osm_polygon
+Sorting data and creating indexes for planet_osm_line
+Sorting data and creating indexes for planet_osm_roads
+Sorting data and creating indexes for planet_osm_polygon
+Committing transaction for planet_osm_point
+Sorting data and creating indexes for planet_osm_point
+Stopping table: planet_osm_nodes
+Stopping table: planet_osm_ways
+Stopping table: planet_osm_rels
+Building index on table: planet_osm_rels
+Stopped table: planet_osm_nodes
+Building index on table: planet_osm_ways
+Stopped table: planet_osm_rels
+Completed planet_osm_point
+Completed planet_osm_roads
+Completed planet_osm_polygon
+Completed planet_osm_line
+Stopped table: planet_osm_ways
+
+Osm2pgsql took 86400s overall</pre>
+<p>The number of nodes, ways and relations processed will obviously differ by the size of the data extract you are using and the date of the data dump. The numbers shown here are not reflective of the full planet import, which is substantially larger.</p>
+<h3>Starting your tileserver</h3>
+<p>Now that everything is installed, set-up and loaded, you can start up your tileserver and hopefully everything is working.  We&#8217;ll run it interctively first, just to make sure that everything&#8217;s working properly:</p>
+<pre>sudo mkdir /var/run/renderd
+sudo chown username /var/run/renderd
+renderd -f -c /usr/local/etc/renderd.conf</pre>
+<p>and on a different session:</p>
+<pre>sudo /etc/init.d/apache2 restart</pre>
+<p>If any FATAL errors occur you&#8217;ll need to double-check any edits that you made earlier.</p>
+<p>If not, try and browse to http://yourserveraddress/osm_tiles/0/0/0.png to see if a small picture of the world appears. The actual map tiles are being created as &#8220;metatiles&#8221; beneath the folder /var/lib/mod_tile.</p>
+<p>If it does, you can stop the interactive renderd process and configure it to run automatically at machine startup as a daemon.</p>
+<pre>sudo cp  ~/src/mod_tile/debian/renderd.init /etc/init.d/renderd
+sudo chmod u+x /etc/init.d/renderd</pre>
+<p>Edit the /etc/init.d/renderd file as root &#8211; you&#8217;ll need to make a couple of changes to the DAEMON and DAEMON_ARGS lines so that they read:</p>
+<pre>DAEMON=/usr/local/bin/$NAME
+DAEMON_ARGS="-c /usr/local/etc/renderd.conf"</pre>
+<p>Also, you&#8217;ll need to change references to www-data so that they match your username &#8211; change &#8220;www-data&#8221; to what you changed &#8220;username&#8221; to in other files.</p>
+<p>You should now be able to start mapnik by doing the following:</p>
+<pre>sudo /etc/init.d/renderd start</pre>
+<p>and stop it:</p>
+<pre>sudo /etc/init.d/renderd stop</pre>
+<p>Logging information is now written to /var/log/syslog instead of to the terminal.</p>
+<p>Next, add a link to the interactive startup directory so that it starts automatically:</p>
+<pre>sudo ln -s /etc/init.d/renderd /etc/rc2.d/S20renderd</pre>
+<p>and then restart your server, browse to http://yourserveraddress/osm_tiles/0/0/0.png and everything should be working! You can also go to the page http://yourserveraddress/mod_tile which should give you some stats about your tileserver.</p>
+<p>Next, you might want to have a look at something in the <a href="https://switch2osm.org/using-tiles/">using tiles</a> section to create a map that uses your new tile server.</p>
+<h2>Acknowledgements</h2>
+<p>With thanks to <a href="http://en.flossmanuals.net/openstreetmap/setting-up-your-own-tile-server/">Ian Dees</a> and <a href="http://weait.com/content/build-your-own-openstreetmap-server">Richard Weait</a></p>
+
+							</div>
+		</div>
+				
+	
+
+	</div>
+
+
+	<div id="sidebar">
+		<div id="icl_lang_sel_widget-1" class="widget widget_icl_lang_sel_widget"><div id="lang_sel"   ><ul><li><a href="#" class="lang_sel_sel icl-en"><img  class="iclflag" src="https://switch2osm.org/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" alt="en"  title="English" />
+								&nbsp;<span class="icl_lang_sel_current icl_lang_sel_native">English</span></a> <ul><li class="icl-fr"><a href="https://switch2osm.org/fr/servir-des-tuiles/mettre-en-place-manuellement-un-serveur-de-tuiles-12-04/" ><img  class="iclflag" src="https://switch2osm.org/wp-content/plugins/sitepress-multilingual-cms/res/flags/fr.png" alt="fr" title="French" />&nbsp;<span class="icl_lang_sel_native">Français</span> <span class="icl_lang_sel_translated"><span class="icl_lang_sel_bracket">(</span>French<span class="icl_lang_sel_bracket">)</span></span></a></li></ul></li></ul></div></div><div id="search-2" class="widget widget_search"><h4 class="widgettitle">Search</h4>			<form method="get" id="sidebarsearch" action="https://switch2osm.org" >
+				<label class="hidden" for="s">Search:</label>
+				<div>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" /> 
+				</div>
+			<input type='hidden' name='lang' value='en' /></form>	
+</div><div id="nav_menu-3" class="widget widget_nav_menu"><h4 class="widgettitle">Links</h4><div class="menu-links-container"><ul id="menu-links" class="menu"><li id="menu-item-253" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-253"><a href="http://www.openstreetmap.org/">OpenStreetMap</a></li>
+<li id="menu-item-254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254"><a href="http://planet.openstreetmap.org/">OSM data download (planet.osm)</a></li>
+<li id="menu-item-255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-255"><a href="http://www.osmfoundation.org/">OSM Foundation</a></li>
+</ul></div></div>	</div>
+
+
+	</div>
+		<div id="footer">
+			<div class="left">&copy; 2013 OpenStreetMap and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>.</div>
+			<div class="right"><a href="http://picomol.de/picolight/" rel="nofollow">Design by picomol</a>. Powered by <a href="http://www.wordpress.org">WordPress</a>.
+		</div>
+	</div>
+</div>
+		<script type='text/javascript' src='https://switch2osm.org/wp-includes/js/comment-reply.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='https://switch2osm.org/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var icl_vars = {"current_language":"en","icl_home":"http:\/\/switch2osm.org\/","ajax_url":"https:\/\/switch2osm.org\/wp-admin\/admin-ajax.php","url_type":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://switch2osm.org/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress.js?ver=4.7.5'></script>
+
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.openstreetmap.org/" : "http://piwik.openstreetmap.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.openstreetmap.org/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+WGS
+https://blog.csdn.net/yu412346928/article/details/24413289
+hsp
+http://alienryderflex.com/hsp.html
+sub pixel
+https://www.grc.com/ctwhat.htm
+sub pixel anti-aliased
+http://alienryderflex.com/sub_pixel/
+android textureformat
+https://support.humblebundle.com/hc/en-us/articles/115003664707-Brothers-A-Tale-of-Two-Sons-Android-Instructions
+google地图下载工具
+https://blog.csdn.net/coolypf/article/details/8563894
+offline navigation
+https://archive.codeplex.com/?p=on4wp7#353936
+offline navigation 
+on4wp7.zip

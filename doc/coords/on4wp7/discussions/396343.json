@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "915510",
+    "ThreadId": "396343",
+    "Html": "\r\n<p>&nbsp;I want to create&nbsp;<span>offline map data like &quot;GOMapData&quot;. I run &quot;<strong>DataGen.cpp</strong>&quot; but &nbsp;I don't find file &quot;list.txt&quot;. How to create &quot;list.txt&quot; and&nbsp;struct of it?</span></p>\r\n<p>&nbsp;</p>\r\n<p><span>Thanks!!!</span></p>\r\n",
+    "PostedDate": "2012-09-20T21:12:26.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "995709",
+    "ThreadId": "396343",
+    "Html": "ls -1 . &gt; <a href=\"mailto:../@list.txt\" rel=\"nofollow\">../@list.txt</a><br />\n",
+    "PostedDate": "2013-02-02T22:47:48.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

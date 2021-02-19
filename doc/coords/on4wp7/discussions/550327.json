@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1261879",
+    "ThreadId": "550327",
+    "Html": "Hello,\r<br />\n<br />\n<a href=\"https://on4wp7.codeplex.com/SourceControl/changeset/view/21455#EvilTransform.cs\" rel=\"nofollow\">https://on4wp7.codeplex.com/SourceControl/changeset/view/21455#EvilTransform.cs</a>\r<br />\n<br />\nCan you please tell me<br />\n<pre><code>    public static void transform(double wgLat, double wgLon, out double mgLat, out double mgLon)\n</code></pre>\n\nWhat is wgLat,wgLon,mgLat,mgLon? My problem is when I am fetching the lat lng in android using locationManager in china and when I am drawing his location on map. It's 200, 300 meter far from where he actually stand. Can you please help me... Thanks in advance..<br />\n",
+    "PostedDate": "2014-07-02T03:27:04.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

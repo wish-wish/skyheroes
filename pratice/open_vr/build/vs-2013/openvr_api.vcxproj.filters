@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="headers">
+      <UniqueIdentifier>{E12E153C-4D0E-94D7-5626-1FAEC284FA38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples">
+      <UniqueIdentifier>{5AFF6082-C6DE-DF1D-CFF6-6AF43B55467F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\driver_sample">
+      <UniqueIdentifier>{56189FC4-C284-5ABF-8B78-F21CF7A37C27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\hellovr_dx12">
+      <UniqueIdentifier>{A311F414-8FA0-7DDE-38BF-91D9242D8E84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\hellovr_opengl">
+      <UniqueIdentifier>{E991743B-D58B-9D8D-BEF8-339EAA9103FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\hellovr_vulkan">
+      <UniqueIdentifier>{F5F1264C-E1EB-4F9E-CA58-E6AEB6F1B50A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\helloworldoverlay">
+      <UniqueIdentifier>{070162D8-73C3-9562-BC73-24EF28756E40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\shared">
+      <UniqueIdentifier>{607554EE-4C43-48F4-35D7-B81A21442459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty">
+      <UniqueIdentifier>{148024A9-0064-E5FE-69C4-DF5155C7CF80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\glew">
+      <UniqueIdentifier>{328028C6-9EB7-705D-A7C1-D48013789756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\glew\glew-1.11.0">
+      <UniqueIdentifier>{1CC24066-887B-AB10-11DB-C5EA7D936180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\glew\glew-1.11.0\include">
+      <UniqueIdentifier>{8F450CAC-FBAA-9F32-8483-410BF0E794A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\glew\glew-1.11.0\include\GL">
+      <UniqueIdentifier>{9160B1E6-7DDE-0180-66D6-BF1752F343A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\sdl2-2.0.3">
+      <UniqueIdentifier>{960EF99A-0227-E0C4-CBD3-6F5E37AB745E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\sdl2-2.0.3\include">
+      <UniqueIdentifier>{096C9E8D-7530-9D7D-3E96-CD47AA1939B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\vulkan-1.0.49.0">
+      <UniqueIdentifier>{492674A1-3562-770B-9E74-8F028ACF1F26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\vulkan-1.0.49.0\include">
+      <UniqueIdentifier>{BC864380-A8EE-094E-115A-1E64FDE0203A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\vulkan-1.0.49.0\include\shaderc">
+      <UniqueIdentifier>{A53FF8AF-91D3-ED57-FA97-470CE64A284A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\thirdparty\vulkan-1.0.49.0\include\vulkan">
+      <UniqueIdentifier>{DC3C5D6A-4803-BA86-915E-48E9FD6328EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\tracked_camera_openvr_sample">
+      <UniqueIdentifier>{69043F15-55EB-000D-FE3B-672AEA017A73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\json">
+      <UniqueIdentifier>{164732CF-0214-8DDA-2B2D-7B821759C268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\vrcommon">
+      <UniqueIdentifier>{8D74F9C8-79D7-886D-225D-C1230E9F54F0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\headers\openvr.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\headers\openvr_capi.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\headers\openvr_driver.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ivrclientcore.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\json\json.h">
+      <Filter>src\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\json\json-forwards.h">
+      <Filter>src\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\dirtools_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\envvartools_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\hmderrors_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\pathtools_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\sharedlibtools_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\strtools_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vrcommon\vrpathregistry_public.h">
+      <Filter>src\vrcommon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\headers\openvr_api.cs">
+      <Filter>headers</Filter>
+    </None>
+    <None Include="..\..\headers\openvr_api.json">
+      <Filter>headers</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\jsoncpp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openvr_api_public.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\dirtools_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\envvartools_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\hmderrors_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\pathtools_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\sharedlibtools_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\strtools_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vrcommon\vrpathregistry_public.cpp">
+      <Filter>src\vrcommon</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

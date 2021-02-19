@@ -1,0 +1,60 @@
+
+01、chipmunk     libs  tarbals
+02、curl         libs  tarbals
+03、freetype2    libs  tarbals
+04、glfw3        libs  tarbals
+05、jpeg         libs  tarbals
+06、luajit       libs  tarbals
+07、png          libs  tarbals
+08、spidermonkey libs  tarbals
+09、sqlite3      libs  sources
+10、tiff         libs  tarbals
+11、webp         libs  tarbals
+12、websockets   libs  tarbals
+13、zlib         libs  tarbals
+
+14、openssl            tarbals
+15、iconv              tarbals
+
+16、webview      峪嗤<ios/android>凪麿峠岬脅髪
+
+20、linux-specific
+fmod        
+21、win10-specific
+angle/ogg
+22、win32-specific
+angle/ogg/ gles/MP3/openal
+23、winrt8.1
+angle/ogg
+24、wp8.1
+angle/ogg
+
+0ad
+
+01、boost
+02、enet        tarbals
+03、gloox       tarbals
+04、iconv       tarbals  cocos
+05、icu	        tarbals
+06、libcurl     tarbals  cocos
+07、libpng      tarbals  cocos
+08、libxml2     tarbals
+09、miniupnpc   tarbals
+10、openal      tarbals  cocos
+11、opengl               cocos
+12、sdl2        
+13、vorbis      tarbals
+14、wxwidgets   tarbals
+15、zlib	tarbals  cocos
+
+vs2013珊音嬬園咎議libs
+
+1、openssl
+2、fcollada
+3、libwebsockets
+4、spidermonkey
+5、libxml2
+
+ps:
+https://www.sqlite.org/howtocompile.html
+

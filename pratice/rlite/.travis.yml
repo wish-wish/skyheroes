@@ -1,0 +1,28 @@
+os:
+  - linux
+
+language: c
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - valgrind
+env:
+  - RL_DEBUG=0
+  - RL_DEBUG=1
+
+compiler:
+  - clang
+#  Disabling gcc because clang is enough, and we don't need to waste cpu cycles
+#  - gcc
+
+script:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install --HEAD valgrind; fi
+  - make
+  - if [ "$RL_DEBUG" = 0 ]; then make vtest; fi
+  - if [ "$RL_DEBUG" = 1 ]; then make vtestoom; fi
+
+notifications:
+  email: false

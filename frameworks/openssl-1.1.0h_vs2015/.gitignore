@@ -1,0 +1,11 @@
+#vs stuff
+Debug
+*/Debug
+Release
+*/Release
+.vs
+*.db
+*.opendb
+# ignore useless file from original source code
+*.in
+*.pl

@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "E:\\Cocos\\projects\\skyheroes"
+		},
+		{
+			"path": "D:\\soft\\android\\android-ndk-r16"
+		},
+		{
+			"path": "E:\\Cocos\\projects\\skyheroes\\pratice\\Chipmunk-7.0.1"
+		},
+		{
+			"path": "E:\\work\\skydream\\skydream\\client\\Resources\\lua"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"files.associations": {
+			"random": "c",
+			"regex": "c"
+		}
+	}
+}

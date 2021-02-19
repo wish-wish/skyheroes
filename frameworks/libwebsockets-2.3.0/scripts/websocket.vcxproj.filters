@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\lib\base64-decode.c" />
+    <ClCompile Include="..\lib\handshake.c" />
+    <ClCompile Include="..\lib\libwebsockets.c" />
+    <ClCompile Include="..\lib\service.c" />
+    <ClCompile Include="..\lib\pollfd.c" />
+    <ClCompile Include="..\lib\output.c" />
+    <ClCompile Include="..\lib\parsers.c" />
+    <ClCompile Include="..\lib\context.c" />
+    <ClCompile Include="..\lib\alloc.c" />
+    <ClCompile Include="..\lib\header.c" />
+    <ClCompile Include="..\lib\client.c" />
+    <ClCompile Include="..\lib\client-handshake.c" />
+    <ClCompile Include="..\lib\client-parser.c" />
+    <ClCompile Include="..\lib\ssl.c" />
+    <ClCompile Include="..\lib\ssl-server.c" />
+    <ClCompile Include="..\lib\ssl-client.c" />
+    <ClCompile Include="..\lib\sha-1.c" />
+    <ClCompile Include="..\lib\lws-plat-win.c" />
+    <ClCompile Include="..\lib\server.c" />
+    <ClCompile Include="..\lib\server-handshake.c" />
+    <ClCompile Include="..\lib\extension.c" />
+    <ClCompile Include="..\lib\extension-permessage-deflate.c" />
+    <ClCompile Include="..\lib\ranges.c" />
+    <ClCompile Include="..\lib\fops-zip.c" />
+    <ClCompile Include="..\win32port\win32helpers\gettimeofday.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\private-libwebsockets.h" />
+    <ClInclude Include="..\lib\extension-permessage-deflate.h" />
+    <ClInclude Include="..\win32port\win32helpers\gettimeofday.h" />
+    <ClInclude Include="..\lib\libwebsockets.h" />
+    <ClInclude Include="..\lib\getifaddrs.h" />
+    <ClInclude Include="..\lib\huftable.h" />
+    <ClInclude Include="..\lib\lejp.h" />
+    <ClInclude Include="..\lib\lextable.h" />
+    <ClInclude Include="..\lib\romfs.h" />
+    <ClInclude Include=".\lws_config.h" />
+    <ClInclude Include="..\lib\lextable-string.h" />
+  </ItemGroup>
+</Project>
