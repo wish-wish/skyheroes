@@ -21,6 +21,13 @@ a pratice project, cocos2d-x lua,  some function intergate got form git, some is
 7、the entrance
 </br>
 
+8、the large file setting
+</br>
+<p align="center">
+    <img src="./pic/5-sdf-setting.PNG">
+</p>
+</br>
+
 <p align="center">
     <img src="./pic/1-debug.PNG">
 </p>
