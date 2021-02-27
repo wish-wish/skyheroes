@@ -46,3 +46,9 @@ E:\Cocos\projects\skyheroes\simulator\Win32.Debug\skyheroes.exe -workdir "E:\Coc
 <p align="center">
     <img src="./pic/4-127.PNG">
 </p>
+</br>
+seeking job.
+<div class="left">微信<br/><img src="./pic/cc_wx.png" height="150" width="148" /></div>
+<br/>
+<div class="left">支付宝<br/><img src="./pic/cc_zfb.png" height="150" width="148" /></div>
+<br/>
