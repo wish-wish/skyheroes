@@ -18,14 +18,14 @@ a pratice project, cocos2d-x lua,  some function intergate got form git, some is
 4、spidermonkey
 </br>
 
-7、the entrance
-</br>
-
-8、the large file setting
+7、the large file setting
 </br>
 <p align="center">
     <img src="./pic/5-sdf-setting.PNG">
 </p>
+</br>
+
+8、the entrance
 </br>
 
 <p align="center">
