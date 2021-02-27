@@ -37,7 +37,7 @@ Scene* MapScene::scene(PublicMsgHandler* pHandle)
 		int mapsourcid = 6;
 		std::string savepath = path + "tiles/";
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-		savepath = "E:/oss/tiles/";
+		//savepath = "E:/oss/tiles/";
 #endif
 		////////////////////////////////////////////
 		if (true)

@@ -16,7 +16,6 @@ a pratice project, cocos2d-x lua,  some function intergate got form git, some is
 2、fcollada
 3、libwebsockets
 4、spidermonkey
-5、libxml2
 </br>
 
 7、the entrance
