@@ -27,7 +27,10 @@ a pratice project, cocos2d-x lua,  some function intergate got form git, some is
 
 8、the entrance
 </br>
-
+Please attention the shortcut skyheroes.exe setting is like the folowing...,the params -workdir & -scale is mine, change it to youself.
+</br>
+E:\Cocos\projects\skyheroes\simulator\Win32.Debug\skyheroes.exe -workdir "E:\Cocos\projects\skyheroes" -scale 0.8
+</br>
 <p align="center">
     <img src="./pic/1-debug.PNG">
 </p>
