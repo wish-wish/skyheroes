@@ -31,7 +31,7 @@ Please attention the shortcut skyheroes.exe setting is like the folowing...,the 
 <br/>
 E:\Cocos\projects\skyheroes\simulator\Win32.Debug\skyheroes.exe -workdir "E:\Cocos\projects\skyheroes" -scale 0.8
 <br/>
-VS 2013 & some soft download <br/>
+9、VS 2013 & some soft download <br/>
 链接：https://pan.baidu.com/s/1oRTlsqrw-U7eluPhpnqeOg<br/>
 提取码：abcd<br/>
 <br/>
